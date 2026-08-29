@@ -59,7 +59,7 @@ jobs:
               const emoji = emojiMap[r.name] || '📦';
               const desc = (r.description || '').replace(/\|/g, '\\|').trim();
               const badge = r.language ? langBadge(r.language) : '';
-              return `| [${emoji} **${r.name}**](https://github.com/CyberGems/${r.name}) | ${desc} | ${badge} |`;
+              return `| ${emoji}&nbsp;[**${r.name}**](https://github.com/CyberGems/${r.name}) | ${desc} | ${badge} |`;
             }).join('\n');
 
             let readme = fs.readFileSync('README.md', 'utf8');
