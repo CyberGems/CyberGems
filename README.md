@@ -68,10 +68,12 @@
 
 <div align="center">
 
-![CyberGems Stats](https://github-readme-stats.vercel.app/api?username=CyberGems&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=false)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=CyberGems&layout=compact&theme=tokyonight&hide_border=true)
+![Stats](https://github-profile-summary-cards.vercel.app/api/cards/stats?username=CyberGems&theme=tokyonight)
+![Top Langs](https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=CyberGems&theme=tokyonight)
+![Repos](https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=CyberGems&theme=tokyonight)
+![Profile Details](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=CyberGems&theme=tokyonight)
 
-![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=CyberGems&theme=tokyo-night&hide_border=true)
+![Streak](https://streak-stats.demolab.com?user=CyberGems&theme=tokyonight&hide_border=true)
 
 </div>
 
