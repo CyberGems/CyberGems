@@ -30,8 +30,6 @@
 
 ## 📦 All Apps & Repositories
 
-> Every public repository — automatically curated. If it's public, it's production-ready.
-
 <!-- REPOS:START -->
 | App | Description | Stack |
 |---|---|---|
