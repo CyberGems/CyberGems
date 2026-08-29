@@ -1,0 +1,82 @@
+# .github/workflows/update-readme.yml
+# Auto-actualiza la tabla de repos en el README del perfil
+# Coloca este archivo en CyberGems/CyberGems/.github/workflows/update-readme.yml
+
+name: Update Profile README
+
+on:
+  schedule:
+    - cron: '0 6 * * *' # cada día a las 06:00 UTC
+  workflow_dispatch: # permite lanzarlo manual
+  push:
+    branches: [main]
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch repos and update README
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const { data: repos } = await github.rest.repos.listForUser({
+              username: 'CyberGems',
+              per_page: 100,
+              sort: 'updated'
+            });
+            
+            // Filtrar solo repos públicos no-fork (ajusta si quieres incluir forks)
+            const filtered = repos
+              .filter(r => !r.fork && r.name !== 'CyberGems')
+              .sort((a,b) => a.name.localeCompare(b.name));
+
+            const langBadge = (lang) => {
+              const map = {
+                'C#': { color: '239120', logo: 'csharp' },
+                'TypeScript': { color: '3178C6', logo: 'typescript' },
+                'JavaScript': { color: 'F7DF1E', logo: 'javascript', logoColor: 'black' },
+                'HTML': { color: 'E34F26', logo: 'html5' },
+              };
+              const cfg = map[lang] || { color: 'lightgrey', logo: '' };
+              const lc = cfg.logoColor ? `&logoColor=${cfg.logoColor}` : '&logoColor=white';
+              return `![${lang}](https://img.shields.io/badge/${encodeURIComponent(lang)}-${cfg.color}?style=flat-square&logo=${cfg.logo}${lc})`;
+            };
+
+            const emojiMap = {
+              'CyberWall': '🛡️', 'CyberViewer': '💫', 'CyberSnap': '📸',
+              'CyberPaste': '⚡', 'CyberNotes': '📝', 'CyberFeeds': '📢',
+              'CyberClock': '🕐', 'CyberLauncher': '🚀', 'CyberTray': '⚡'
+            };
+
+            const rows = filtered.map(r => {
+              const emoji = emojiMap[r.name] || '📦';
+              const desc = (r.description || '').replace(/\|/g, '\\|').trim();
+              const badge = r.language ? langBadge(r.language) : '';
+              return `| [${emoji} **${r.name}**](https://github.com/CyberGems/${r.name}) | ${desc} | ${badge} |`;
+            }).join('\n');
+
+            let readme = fs.readFileSync('README.md', 'utf8');
+            const start = '<!-- REPOS:START -->';
+            const end = '<!-- REPOS:END -->';
+            const newSection = `${start}\n${rows}\n${end}`;
+            
+            if (readme.includes(start) && readme.includes(end)) {
+              readme = readme.replace(new RegExp(`${start}[\\s\\S]*?${end}`), newSection);
+            } else {
+              // Fallback: añade al final si no existen marcadores
+              readme += `\n\n${newSection}\n`;
+            }
+            
+            fs.writeFileSync('README.md', readme);
+            console.log(`Updated ${filtered.length} repos`);
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --quiet || (git add README.md && git commit -m "chore: auto-update repos list" && git push)

@@ -32,6 +32,7 @@
 
 > Every public repository — automatically curated. If it's public, it's production-ready.
 
+<!-- REPOS:START -->
 | App | Description | Stack |
 |---|---|---|
 | [🚀 **CyberLauncher**](https://github.com/CyberGems/CyberLauncher) | Windows application launcher for casual & power users. Hot corners, scheduler, system monitoring, global shortcuts, drag & drop | ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) |
@@ -43,8 +44,7 @@
 | [💫 **CyberViewer**](https://github.com/CyberGems/CyberViewer) | Full-featured image viewer & editor for casual and power users | ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) |
 | [📢 **CyberFeeds**](https://github.com/CyberGems/CyberFeeds) | High-performance, local-first RSS & Atom feed reader. Fast, private, clean reading with smart background sync | ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) |
 | [🕐 **CyberClock**](https://github.com/CyberGems/CyberClock) | Desktop clock for Windows — analog & digital, calendar, timer, stopwatch & relaxation module | ![HTML](https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=html5&logoColor=white) |
-
-> 📌 Tip: This table lists **all 9 public apps**. Add a new repo and it will appear automatically if you enable auto-update (see below).
+<!-- REPOS:END -->
 
 ---
 
@@ -97,9 +97,4 @@ All apps are **GPLv3** — free forever. Contributions, bug reports and stars ar
 
 ---
 
-<!-- 
-  🔄 AUTO-UPDATE (opcional): 
-  Si quieres que esta tabla se actualice sola cuando crees un repo nuevo,
-  añade el workflow de abajo en .github/workflows/update-readme.yml 
-  del repo CyberGems/CyberGems
--->
+
