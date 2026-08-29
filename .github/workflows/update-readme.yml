@@ -10,6 +10,8 @@ on:
   workflow_dispatch: # permite lanzarlo manual
   push:
     branches: [main]
+    paths:
+      - '.github/workflows/update-readme.yml'
 
 jobs:
   update-readme:
@@ -63,7 +65,8 @@ jobs:
             let readme = fs.readFileSync('README.md', 'utf8');
             const start = '<!-- REPOS:START -->';
             const end = '<!-- REPOS:END -->';
-            const newSection = `${start}\n${rows}\n${end}`;
+            const header = `| App | Description | Stack |\n|---|---|---|`;
+            const newSection = `${start}\n${header}\n${rows}\n${end}`;
             
             if (readme.includes(start) && readme.includes(end)) {
               readme = readme.replace(new RegExp(`${start}[\\s\\S]*?${end}`), newSection);

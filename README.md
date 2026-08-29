@@ -33,6 +33,8 @@
 > Every public repository — automatically curated. If it's public, it's production-ready.
 
 <!-- REPOS:START -->
+| App | Description | Stack |
+|---|---|---|
 | [🕐 **CyberClock**](https://github.com/CyberGems/CyberClock) | 🕐 CyberClock is a free, open-source, desktop clock for Windows. It features analog & digital display, calendar, timer, stopwatch, and a relaxation module | ![HTML](https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=html5&logoColor=white) |
 | [📢 **CyberFeeds**](https://github.com/CyberGems/CyberFeeds) | 📢 CyberFeeds is a free, open-source, high-performance, local-first RSS and Atom feed reader. Built for speed, privacy, and a clean reading experience with smart background sync and robust desktop notifications. | ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) |
 | [🚀 **CyberLauncher**](https://github.com/CyberGems/CyberLauncher) | 🚀 CyberLauncher is a free, open-source Windows application launcher for casual and power users. Features hot corners, execution scheduler, real-time system monitoring, global shortcuts, drag & drop, glassmorphic UI, integreated Terminal, optional system-wide file search, and more! | ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) |
