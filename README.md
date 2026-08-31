@@ -24,7 +24,7 @@
 
 > **CyberGems** crafts free and open-source Windows applications that respect your privacy. No ads, no telemetry, no cloud lock-in — just fast, native, beautiful tools. All projects are **GPLv3** licensed.
 
-🌐 **Website:** [cybergems.org](https://cybergems.org) &nbsp;|&nbsp; 🏛️ **Organization:** [github.com/CyberGems](https://github.com/CyberGems)
+🌐 **Website:** [cybergems.org](https://cybergems.org) &nbsp;|&nbsp; 👨‍💻 **Developer:** [github.com/CyberGems](https://github.com/CyberGems)
 
 ---
 
