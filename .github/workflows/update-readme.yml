@@ -32,9 +32,11 @@ jobs:
               sort: 'updated'
             });
             
+            // Repos excluidos del perfil (no son apps): el propio perfil y la web
+            const EXCLUDE = new Set(['CyberGems', 'CyberGems.github.io']);
             // Filtrar solo repos públicos no-fork (ajusta si quieres incluir forks)
             const filtered = repos
-              .filter(r => !r.fork && r.name !== 'CyberGems')
+              .filter(r => !r.fork && !EXCLUDE.has(r.name))
               .sort((a,b) => a.name.localeCompare(b.name));
 
             const langBadge = (lang) => {
