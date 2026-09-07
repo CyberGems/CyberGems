@@ -74,12 +74,15 @@ jobs:
               'CyberManager': '💻'
             };
 
+            // Dos repos aún usan master como rama principal (verificado por API).
+            const branchMap = { 'CyberClock': 'master', 'CyberWall': 'master' };
+            const branchFor = (repo) => branchMap[repo] || 'main';
+
             const iconFor = (repo) => {
               const path = iconMap[repo];
-              // Icono DENTRO del mismo enlace que el nombre: una sola unidad
-              // sin oportunidades de salto de línea (el nbsp interno no rompe
-              // y el nombre es una sola palabra).
-              if (path) return `[<img src="https://raw.githubusercontent.com/CyberGems/${repo}/main/${path}" width="24" alt="${repo} icon">&nbsp;**${repo}**](https://github.com/CyberGems/${repo})`;
+              // Icono ARRIBA del nombre y todo centrado (columna :---:):
+              // una sola unidad sin oportunidades de salto de línea.
+              if (path) return `[<img src="https://raw.githubusercontent.com/CyberGems/${repo}/${branchFor(repo)}/${path}" width="32" alt="${repo} icon"><br>**${repo}**](https://github.com/CyberGems/${repo})`;
               return `${emojiMap[repo] || '📦'}&nbsp;[**${repo}**](https://github.com/CyberGems/${repo})`;
             };
 
@@ -92,7 +95,7 @@ jobs:
             let readme = fs.readFileSync('README.md', 'utf8');
             const start = '<!-- REPOS:START -->';
             const end = '<!-- REPOS:END -->';
-            const header = `| App | Description | Stack |\n|---|---|---|`;
+            const header = `| App | Description | Stack |\n|:---:|---|---|`;
             const newSection = `${start}\n${header}\n${rows}\n${end}`;
             
             if (readme.includes(start) && readme.includes(end)) {
