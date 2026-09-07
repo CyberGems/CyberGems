@@ -51,6 +51,22 @@ jobs:
               return `![${lang}](https://img.shields.io/badge/${encodeURIComponent(lang)}-${cfg.color}?style=flat-square&logo=${cfg.logo}${lc})`;
             };
 
+            // Iconos oficiales: PNG commiteado en cada repo de app. Si se
+            // actualiza el original, el README lo refleja solo (URL raw).
+            // Repos sin entrada usan el emoji como fallback.
+            const iconMap = {
+              'CyberClock': 'src-tauri/icons/icon.png',
+              'CyberFeeds': 'resources/icon.png',
+              'CyberLauncher': 'public/icon-256.png',
+              'CyberManager': 'src/CyberManager.UI/Assets/CyberManager.png',
+              'CyberNotes': 'assets/icon.png',
+              'CyberPaste': 'src-tauri/icons/icon.png',
+              'CyberSnap': 'src/CyberSnap/Assets/CyberSnap_square.png',
+              'CyberTray': 'public/icon.png',
+              'CyberViewer': 'assets/icon.png',
+              'CyberWall': 'src/CyberWall.UI/Assets/CyberWall.png'
+            };
+
             const emojiMap = {
               'CyberWall': '🛡️', 'CyberViewer': '💫', 'CyberSnap': '📸',
               'CyberPaste': '⚡', 'CyberNotes': '📝', 'CyberFeeds': '📢',
@@ -58,11 +74,17 @@ jobs:
               'CyberManager': '💻'
             };
 
+            const iconFor = (repo) => {
+              const path = iconMap[repo];
+              if (path) return `<img src="https://raw.githubusercontent.com/CyberGems/${repo}/main/${path}" width="24" alt="${repo} icon">`;
+              return emojiMap[repo] || '📦';
+            };
+
             const rows = filtered.map(r => {
-              const emoji = emojiMap[r.name] || '📦';
+              const icon = iconFor(r.name);
               const desc = (r.description || '').replace(/\|/g, '\\|').trim();
               const badge = r.language ? langBadge(r.language) : '';
-              return `| ${emoji}&nbsp;[**${r.name}**](https://github.com/CyberGems/${r.name}) | ${desc} | ${badge} |`;
+              return `| ${icon}&nbsp;[**${r.name}**](https://github.com/CyberGems/${r.name}) | ${desc} | ${badge} |`;
             }).join('\n');
 
             let readme = fs.readFileSync('README.md', 'utf8');
