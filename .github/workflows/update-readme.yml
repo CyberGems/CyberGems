@@ -54,7 +54,8 @@ jobs:
             const emojiMap = {
               'CyberWall': '🛡️', 'CyberViewer': '💫', 'CyberSnap': '📸',
               'CyberPaste': '⚡', 'CyberNotes': '📝', 'CyberFeeds': '📢',
-              'CyberClock': '🕐', 'CyberLauncher': '🚀', 'CyberTray': '⚡'
+              'CyberClock': '🕐', 'CyberLauncher': '🚀', 'CyberTray': '⚡',
+              'CyberManager': '💻'
             };
 
             const rows = filtered.map(r => {
