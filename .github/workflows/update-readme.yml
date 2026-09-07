@@ -76,15 +76,17 @@ jobs:
 
             const iconFor = (repo) => {
               const path = iconMap[repo];
-              if (path) return `<img src="https://raw.githubusercontent.com/CyberGems/${repo}/main/${path}" width="24" alt="${repo} icon">`;
-              return emojiMap[repo] || '📦';
+              // Icono DENTRO del mismo enlace que el nombre: una sola unidad
+              // sin oportunidades de salto de línea (el nbsp interno no rompe
+              // y el nombre es una sola palabra).
+              if (path) return `[<img src="https://raw.githubusercontent.com/CyberGems/${repo}/main/${path}" width="24" alt="${repo} icon">&nbsp;**${repo}**](https://github.com/CyberGems/${repo})`;
+              return `${emojiMap[repo] || '📦'}&nbsp;[**${repo}**](https://github.com/CyberGems/${repo})`;
             };
 
             const rows = filtered.map(r => {
-              const icon = iconFor(r.name);
               const desc = (r.description || '').replace(/\|/g, '\\|').trim();
               const badge = r.language ? langBadge(r.language) : '';
-              return `| ${icon}&nbsp;[**${r.name}**](https://github.com/CyberGems/${r.name}) | ${desc} | ${badge} |`;
+              return `| ${iconFor(r.name)} | ${desc} | ${badge} |`;
             }).join('\n');
 
             let readme = fs.readFileSync('README.md', 'utf8');
