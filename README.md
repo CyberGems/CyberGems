@@ -2,7 +2,7 @@
 
 # 💎 CyberGems
 
-**High-quality, open-source Windows apps — Free, No Ads, No Tracking.**
+**High-quality, open-source Windows apps — Free, No Ads, No Account, No Tracking.**
 
 *Building polished desktop tools with privacy-first, local-first philosophy.*
 
