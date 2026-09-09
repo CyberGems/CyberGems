@@ -4,7 +4,8 @@
   <img src="https://raw.githubusercontent.com/CyberGems/CyberGems.github.io/main/public/branding/cybergems-header.svg" alt="CyberGems" width="360">
 </a>
 
-**Privacy-friendly open-source Windows apps for daily use, with a modern user interface—free, no ads, no account, no tracking. — Free, No Ads, No Account, No Tracking.**
+**Privacy-friendly open-source Windows apps for daily use, with a modern user interface. <br>
+— Free, No Ads, No Account, No Tracking—**
 
 *💎 Building polished desktop tools with privacy-first, local-first philosophy.*
 
