@@ -7,7 +7,7 @@
 **Privacy-friendly open-source Windows apps for daily use, with a modern user interface. <br>
 — Free, No Ads, No Account, No Tracking —**
 
-💎 * Building reliable, polished desktop tools for casual and power users. Privacy-first and local-first by design.*
+💎 *Building reliable, polished desktop tools for casual and power users. Privacy-first and local-first by design.*
 
 [![Website](https://img.shields.io/badge/Website-cybergems.org-0a66c2?style=for-the-badge&logo=google-chrome&logoColor=white)](https://cybergems.org)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue?style=for-the-badge&logo=gnu&logoColor=white)](https://www.gnu.org/licenses/gpl-3.0)
