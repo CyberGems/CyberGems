@@ -1,10 +1,12 @@
 <div align="center">
 
-# 💎 CyberGems
+<a href="https://cybergems.org">
+  <img src="https://raw.githubusercontent.com/CyberGems/CyberGems.github.io/main/public/branding/cybergems-header.svg" alt="CyberGems" width="360">
+</a>
 
 **High-quality, open-source Windows apps — Free, No Ads, No Account, No Tracking.**
 
-*Building polished desktop tools with privacy-first, local-first philosophy.*
+*💎 Building polished desktop tools with privacy-first, local-first philosophy.*
 
 [![Website](https://img.shields.io/badge/Website-cybergems.org-0a66c2?style=for-the-badge&logo=google-chrome&logoColor=white)](https://cybergems.org)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue?style=for-the-badge&logo=gnu&logoColor=white)](https://www.gnu.org/licenses/gpl-3.0)
