@@ -39,6 +39,22 @@ jobs:
               .filter(r => !r.fork && !EXCLUDE.has(r.name))
               .sort((a,b) => a.name.localeCompare(b.name));
 
+            // Una app solo sale en el perfil cuando ya tiene una versión
+            // final. Las que siguen en alpha (sus releases son prerelease)
+            // se quedan fuera, y entran solas el día que publican su
+            // primera versión estable.
+            const published = [];
+            for (const repo of filtered) {
+              const releases = await github.rest.repos.listReleases({
+                owner: 'CyberGems',
+                repo: repo.name,
+                per_page: 100,
+              });
+              const stable = releases.data.some(rel => !rel.draft && !rel.prerelease);
+              if (stable) published.push(repo);
+              else console.log(`Hidden until a stable release: ${repo.name}`);
+            }
+
             const langBadge = (lang) => {
               const map = {
                 'C#': { color: '239120', logo: 'csharp' },
@@ -57,6 +73,8 @@ jobs:
             const iconMap = {
               'CyberClock': 'src-tauri/icons/icon.png',
               'CyberFeeds': 'resources/icon.png',
+              'CyberFiles': 'public/icon.png',
+              'CyberGo': 'public/icon.png',
               'CyberLauncher': 'public/icon-256.png',
               'CyberManager': 'src/CyberManager.UI/Assets/CyberManager.png',
               'CyberNotes': 'assets/icon.png',
@@ -71,7 +89,7 @@ jobs:
               'CyberWall': '🛡️', 'CyberViewer': '💫', 'CyberSnap': '📸',
               'CyberPaste': '⚡', 'CyberNotes': '📝', 'CyberFeeds': '📢',
               'CyberClock': '🕐', 'CyberLauncher': '🚀', 'CyberTray': '⚡',
-              'CyberManager': '💻'
+              'CyberManager': '💻', 'CyberGo': '🗓️', 'CyberFiles': '📁'
             };
 
             // Dos repos aún usan master como rama principal (verificado por API).
@@ -86,7 +104,7 @@ jobs:
               return `${emojiMap[repo] || '📦'}&nbsp;[**${repo}**](https://github.com/CyberGems/${repo})`;
             };
 
-            const rows = filtered.map(r => {
+            const rows = published.map(r => {
               const desc = (r.description || '').replace(/\|/g, '\\|').trim();
               const badge = r.language ? langBadge(r.language) : '';
               return `| ${iconFor(r.name)} | ${desc} | ${badge} |`;
@@ -106,7 +124,7 @@ jobs:
             }
             
             fs.writeFileSync('README.md', readme);
-            console.log(`Updated ${filtered.length} repos`);
+            console.log(`Updated ${published.length} repos`);
 
       - name: Commit changes
         run: |
