@@ -18,6 +18,7 @@
 ![License](https://img.shields.io/badge/All%20Apps-GPLv3-informational?style=flat-square)
 ![Platform](https://img.shields.io/badge/Platform-Windows-0078D6?style=flat-square&logo=windows&logoColor=white)
 ![No Tracking](https://img.shields.io/badge/Privacy-No%20Tracking-success?style=flat-square)
+![Profile views](https://komarev.com/ghpvc/?username=CyberGems&label=Profile%20views&color=0a66c2&style=flat-square)
 
 </div>
 
