@@ -13,7 +13,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue?style=for-the-badge&logo=gnu&logoColor=white)](https://www.gnu.org/licenses/gpl-3.0)
 [![GitHub Org](https://img.shields.io/badge/GitHub-CyberGems-0a66c2?style=for-the-badge&logo=github&logoColor=white)](https://github.com/CyberGems)
 
-![Repos](https://img.shields.io/badge/Repos-10%20Public-00b894?style=flat-square)
+![Apps](https://img.shields.io/badge/Apps-10%20Published-00b894?style=flat-square)
 ![License](https://img.shields.io/badge/All%20Apps-GPLv3-informational?style=flat-square)
 ![Platform](https://img.shields.io/badge/Platform-Windows-0078D6?style=flat-square&logo=windows&logoColor=white)
 ![No Tracking](https://img.shields.io/badge/Privacy-No%20Tracking-success?style=flat-square)
