@@ -12,7 +12,6 @@
 [![Website](https://img.shields.io/badge/Website-cybergems.org-0a66c2?style=for-the-badge&logo=google-chrome&logoColor=white)](https://cybergems.org)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue?style=for-the-badge&logo=gnu&logoColor=white)](https://www.gnu.org/licenses/gpl-3.0)
 [![GitHub Org](https://img.shields.io/badge/GitHub-CyberGems-0a66c2?style=for-the-badge&logo=github&logoColor=white)](https://github.com/CyberGems)
-[![Made with Love](https://img.shields.io/badge/Made%20with-%E2%9D%A4-red?style=for-the-badge)](https://github.com/CyberGems)
 
 ![Repos](https://img.shields.io/badge/Repos-10%20Public-00b894?style=flat-square)
 ![License](https://img.shields.io/badge/All%20Apps-GPLv3-informational?style=flat-square)
@@ -28,7 +27,7 @@
 
 > **CyberGems** crafts free and open-source Windows applications that respect your privacy. No ads, no telemetry, no cloud lock-in — just fast, native, beautiful tools. All projects are **GPLv3** licensed.
 
-🌐 **Website:** [cybergems.org](https://cybergems.org) &nbsp;|&nbsp; ✉️ **Mail:** hello@cybergems.org &nbsp;|&nbsp; 👨‍💻 **Developer:** [github.com/CyberGems](https://github.com/CyberGems)
+🌐 **Website:** [cybergems.org](https://cybergems.org) &nbsp;|&nbsp; ✉️ **Mail:** hello@cybergems.org &nbsp;|&nbsp; 👨‍💻 **Developer:** [cybergems.org/about](https://cybergems.org/about)
 
 ---
 
@@ -61,7 +60,7 @@
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![.NET](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
 ![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
-![WFP](https://img.shields.io/badge/WFP-Kernel-black?style=for-the-badge)
+![WFP](https://img.shields.io/badge/WFP-Kernel-6e7681?style=for-the-badge)
 
 </div>
 
@@ -100,4 +99,8 @@ All apps are **GPLv3** — free forever. Contributions, bug reports and stars ar
 
 ---
 
+<div align="center">
 
+[![Made with Love](https://img.shields.io/badge/Made%20with-%E2%9D%A4-red?style=for-the-badge)](https://cybergems.org/about)
+
+</div>
