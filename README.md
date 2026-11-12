@@ -87,7 +87,7 @@ All apps are **GPLv3** — free forever. Contributions, bug reports and stars ar
 
 - ⭐ Star a repo you like — it helps a lot
 - 🐛 Open an issue if you find a bug
-- 🔀 PRs are welcome — check each repo's `CONTRIBUTING.md`
+- 🔀 PRs are welcome — open one against the app repository you want to improve
 
 <div align="center">
 
