@@ -87,7 +87,7 @@ jobs:
 
             const emojiMap = {
               'CyberWall': '🛡️', 'CyberViewer': '💫', 'CyberSnap': '📸',
-              'CyberPaste': '⚡', 'CyberNotes': '📝', 'CyberFeeds': '📢',
+              'CyberPaste': '📋', 'CyberNotes': '📝', 'CyberFeeds': '📢',
               'CyberClock': '🕐', 'CyberLauncher': '🚀', 'CyberTray': '⚡',
               'CyberManager': '💻', 'CyberGo': '🗓️', 'CyberFiles': '📁'
             };
@@ -123,6 +123,14 @@ jobs:
               readme += `\n\n${newSection}\n`;
             }
             
+            // El badge de "apps publicadas" estaba escrito a mano y se quedaba
+            // desfasado cada vez que una app entraba o salía de la tabla.
+            // Se recalcula junto con la tabla para que ambos digan lo mismo.
+            readme = readme.replace(
+              /Apps-\d+%20Published/,
+              `Apps-${published.length}%20Published`
+            );
+
             fs.writeFileSync('README.md', readme);
             console.log(`Updated ${published.length} repos`);
 
