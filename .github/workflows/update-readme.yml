@@ -32,8 +32,9 @@ jobs:
               sort: 'updated'
             });
             
-            // Repos excluidos del perfil (no son apps): el propio perfil y la web
-            const EXCLUDE = new Set(['CyberGems', 'CyberGems.github.io']);
+            // Repos excluidos del perfil (no son apps): el propio perfil, la web
+            // y el repo de archivos de comunidad, que nunca debe salir en la tabla.
+            const EXCLUDE = new Set(['CyberGems', 'CyberGems.github.io', '.github']);
             // Filtrar solo repos públicos no-fork (ajusta si quieres incluir forks)
             const filtered = repos
               .filter(r => !r.fork && !EXCLUDE.has(r.name))
