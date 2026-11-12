@@ -92,22 +92,22 @@ jobs:
               'CyberManager': '💻', 'CyberGo': '🗓️', 'CyberFiles': '📁'
             };
 
-            // Dos repos aún usan master como rama principal (verificado por API).
-            const branchMap = { 'CyberClock': 'master', 'CyberWall': 'master' };
-            const branchFor = (repo) => branchMap[repo] || 'main';
-
+            // La rama por defecto la informa la API. Antes había dos repos
+            // (CyberClock y CyberWall) clavados como 'master', así que al
+            // cambiarla o al añadir otro repo con master los iconos se
+            // rompían en silencio.
             const iconFor = (repo) => {
-              const path = iconMap[repo];
+              const path = iconMap[repo.name];
               // Icono ARRIBA del nombre y todo centrado (columna :---:):
               // una sola unidad sin oportunidades de salto de línea.
-              if (path) return `[<img src="https://raw.githubusercontent.com/CyberGems/${repo}/${branchFor(repo)}/${path}" width="32" alt="${repo} icon"><br>**${repo}**](https://github.com/CyberGems/${repo})`;
-              return `${emojiMap[repo] || '📦'}&nbsp;[**${repo}**](https://github.com/CyberGems/${repo})`;
+              if (path) return `[<img src="https://raw.githubusercontent.com/CyberGems/${repo.name}/${repo.default_branch}/${path}" width="32" alt="${repo.name} icon"><br>**${repo.name}**](https://github.com/CyberGems/${repo.name})`;
+              return `${emojiMap[repo.name] || '📦'}&nbsp;[**${repo.name}**](https://github.com/CyberGems/${repo.name})`;
             };
 
             const rows = published.map(r => {
               const desc = (r.description || '').replace(/\|/g, '\\|').trim();
               const badge = r.language ? langBadge(r.language) : '';
-              return `| ${iconFor(r.name)} | ${desc} | ${badge} |`;
+              return `| ${iconFor(r)} | ${desc} | ${badge} |`;
             }).join('\n');
 
             let readme = fs.readFileSync('README.md', 'utf8');
