@@ -83,11 +83,11 @@
 
 ### 🤝 Contributing & Support
 
-All apps are **GPLv3** — free forever. Contributions, bug reports and stars are welcome!
+Contributions, bug reports and stars are welcome!
 
 - ⭐ Star a repo you like — it helps a lot
 - 🐛 Open an issue if you find a bug
-- 🔀 PRs are welcome — read the [contribution guide](https://github.com/CyberGems/.github/blob/main/CONTRIBUTING.md) first; it covers the README skeleton, commits and the bilingual rule
+- 🔀 PRs are welcome — read the [contribution guide](https://github.com/CyberGems/.github/blob/main/CONTRIBUTING.md) first
 - 🔐 Found a vulnerability? Follow the [security policy](https://github.com/CyberGems/.github/blob/main/SECURITY.md) instead of opening a public issue
 - 🤝 Everyone here is expected to follow the [code of conduct](https://github.com/CyberGems/.github/blob/main/CODE_OF_CONDUCT.md)
 
