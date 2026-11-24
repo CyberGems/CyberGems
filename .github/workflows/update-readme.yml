@@ -32,28 +32,44 @@ jobs:
               sort: 'updated'
             });
             
+            const SITE_OWNER = 'CyberGems';
+            const SITE_REPO = 'CyberGems.github.io';
+
             // Repos excluidos del perfil (no son apps): el propio perfil, la web
             // y el repo de archivos de comunidad, que nunca debe salir en la tabla.
-            const EXCLUDE = new Set(['CyberGems', 'CyberGems.github.io', '.github']);
-            // Filtrar solo repos públicos no-fork (ajusta si quieres incluir forks)
+            const EXCLUDE = new Set(['CyberGems', SITE_REPO, '.github']);
+
+            // La web es la fuente de verdad: solo sus apps con published=true
+            // aparecen aquí. Así CyberGo (alpha) y CyberFiles (pre-release)
+            // quedan fuera aunque algún release esté mal marcado como estable.
+            const { data: appDir } = await github.rest.repos.getContent({
+              owner: SITE_OWNER,
+              repo: SITE_REPO,
+              path: 'src/data/apps'
+            });
+            const appFiles = appDir.filter(item => item.type === 'file' && item.name.endsWith('.json'));
+            const manifests = await Promise.all(appFiles.map(async (item) => {
+              const { data: file } = await github.rest.repos.getContent({
+                owner: SITE_OWNER,
+                repo: SITE_REPO,
+                path: item.path
+              });
+              return JSON.parse(Buffer.from(file.content.replace(/\n/g, ''), 'base64').toString('utf8'));
+            }));
+            const publishedSlugs = new Set(
+              manifests.filter(app => app.published === true).map(app => app.slug.toLowerCase())
+            );
+            if (publishedSlugs.size === 0) {
+              throw new Error('No published apps found in the website manifests');
+            }
+
+            // Filtrar solo repos públicos no-fork que estén publicados en la web.
             const filtered = repos
               .filter(r => !r.fork && !EXCLUDE.has(r.name))
               .sort((a,b) => a.name.localeCompare(b.name));
-
-            // Una app solo sale en el perfil cuando ya tiene una versión
-            // final. Las que siguen en alpha (sus releases son prerelease)
-            // se quedan fuera, y entran solas el día que publican su
-            // primera versión estable.
-            const published = [];
+            const published = filtered.filter(repo => publishedSlugs.has(repo.name.toLowerCase()));
             for (const repo of filtered) {
-              const releases = await github.rest.repos.listReleases({
-                owner: 'CyberGems',
-                repo: repo.name,
-                per_page: 100,
-              });
-              const stable = releases.data.some(rel => !rel.draft && !rel.prerelease);
-              if (stable) published.push(repo);
-              else console.log(`Hidden until a stable release: ${repo.name}`);
+              if (!publishedSlugs.has(repo.name.toLowerCase())) console.log(`Hidden draft app: ${repo.name}`);
             }
 
             const langBadge = (lang) => {
