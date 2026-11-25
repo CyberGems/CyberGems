@@ -25,7 +25,7 @@
 
 ### ✨ About
 
-> **CyberGems** crafts free and open-source Windows applications that respect your privacy. No ads, no telemetry, no cloud lock-in — just fast, native, beautiful tools. All projects are **GPLv3** licensed.
+> **CyberGems** is an independent project focused on practical Windows utilities. The suite covers clocks, feeds, launchers, system monitoring, notes, clipboard history, screenshots, shortcuts, image viewing, media player and firewall control. Development is public in each repository, releases are documented in the changelog, and bug reports, ideas and pull requests are welcome.
 
 🌐 **Website:** [cybergems.org](https://cybergems.org) &nbsp;|&nbsp; ✉️ **Mail:** hello@cybergems.org &nbsp;|&nbsp; 👨‍💻 **Developer:** [cybergems.org/about](https://cybergems.org/about)
 
