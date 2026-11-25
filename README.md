@@ -4,10 +4,10 @@
   <img src="https://raw.githubusercontent.com/CyberGems/CyberGems.github.io/main/public/branding/cybergems-header.svg" alt="CyberGems" width="360">
 </a>
 
-**Privacy-friendly open-source Windows apps for daily use, with a modern user interface. <br>
-— Free, No Ads, No Account, No Tracking —**
+**Privacy-first open-source Windows apps for everyday work, with a clean interface that stays out of your way. <br>
+— Free to use · No ads · No account required · No tracking · No cloud lock-in —**
 
-💎 *Building reliable, polished desktop tools for casual and power users. Privacy-first and local-first by design.*
+💎 *Local by design, made for quick tasks and deeper workflows.*
 
 [![Website](https://img.shields.io/badge/Website-cybergems.org-0a66c2?style=for-the-badge&logo=google-chrome&logoColor=white)](https://cybergems.org)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue?style=for-the-badge&logo=gnu&logoColor=white)](https://www.gnu.org/licenses/gpl-3.0)
@@ -25,7 +25,7 @@
 
 ### ✨ About
 
-> **CyberGems** crafts free and open-source Windows applications that respect your privacy. No ads, no telemetry, no cloud lock-in — just fast, native, beautiful tools. All projects are **GPLv3** licensed.
+> **CyberGems** is an independent project focused on practical Windows utilities. The suite covers clocks, feeds, launchers, system monitoring, notes, clipboard history, screenshots, shortcuts, image viewing, media player and firewall control. Development is public in each repository, releases are documented in the changelog, and bug reports, ideas and pull requests are welcome.
 
 🌐 **Website:** [cybergems.org](https://cybergems.org) &nbsp;|&nbsp; ✉️ **Mail:** hello@cybergems.org &nbsp;|&nbsp; 👨‍💻 **Developer:** [cybergems.org/about](https://cybergems.org/about)
 
